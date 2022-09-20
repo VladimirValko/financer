@@ -1,0 +1,153 @@
+.navbarWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  font-weight: 700;
+  border-width: 1px;
+  border-color: var(--color-bg-secondary);
+  border-radius: 1rem;
+  background-color: var(--color-bg-primary);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1140px;
+  -webkit-box-shadow: 1px 4px 8px 0px var(--color-shadow);
+  -moz-box-shadow: 1px 4px 8px 0px var(--color-shadow);
+  box-shadow: 1px 4px 8px 0px var(--color-shadow);  
+}
+
+.logo {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.themeToggle {
+  display: none;
+}
+
+.loginBlock {
+  display: none;
+}
+
+.signin {
+  padding: 1rem;
+  
+}
+
+.signin:hover {
+  color: var(--color-text-accent);
+}
+
+.signup {
+  background-color: var(--color-bg-button);
+  color: var(--color-bg-secondary);
+  padding: 0.5rem 1.25rem;
+  margin-left: 0.5rem;
+  border-radius: 1rem;
+}
+
+.signup:hover {
+  color: #FFF;
+  -webkit-box-shadow: 0px 2px 2px 0px var(--color-shadow); 
+  -moz-box-shadow: 0px 2px 2px 0px var(--color-shadow); 
+  box-shadow: 0px 2px 2px 0px var(--color-shadow); 
+}
+
+.munuIcon {
+  display: block;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.navShown {
+  position: fixed;
+  left: 0px;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 90%;
+  background-color: var(--color-bg-primary);
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  z-index: 10;
+}
+
+.navHidden {
+  position: fixed;
+  left: -100%;
+  top: 5rem;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+}
+
+.mobileMenu {
+  width: 100%;
+  padding: 1rem;
+  list-style-type: none;
+}
+
+.mobileMenuItem {
+  border-bottom: 1px solid var(--color-bg-secondary);
+  padding: 1.5rem 0;
+}
+
+.mobileLoginWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+}
+
+.signInBtn {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: 1rem;
+  -webkit-box-shadow: 0px 2px 2px 0px var(--color-shadow); 
+  -moz-box-shadow: 0px 2px 2px 0px var(--color-shadow); 
+  box-shadow: 0px 2px 2px 0px var(--color-shadow); 
+}
+
+.signUpBtn {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border: none;
+  background-color: var(--color-bg-button);
+  color: var(--color-bg-secondary);
+  border-radius: 1rem;
+  -webkit-box-shadow: 0px 2px 2px 0px var(--color-shadow); 
+  -moz-box-shadow: 0px 2px 2px 0px var(--color-shadow); 
+  box-shadow: 0px 2px 2px 0px var(--color-shadow); 
+}
+
+
+
+@media (min-width: 768px) {
+  .themeToggle {
+    display: block;
+  }
+  .loginBlock{
+    display: block;
+  }
+  .munuIcon{
+    display: none;
+  }
+  .navShown{
+    display: none
+  }
+}

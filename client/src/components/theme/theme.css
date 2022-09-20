@@ -1,0 +1,16 @@
+.themeWrapper {
+  padding: 0.5rem;
+}
+
+.toggleTheme {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.themeIcon {
+  color: var(--color-text-primary);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-right: 0.5rem;
+}
