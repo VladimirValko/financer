@@ -25,11 +25,7 @@ const Trending = () => {
           <div key={coin.item.id} className="coinItemWrapper">
             <div className="coinItemContainer">
               <div className="coinInfo">
-                <img
-                  src={coin.item.small}
-                  alt={coin.item.id}
-                  className="coinImg"
-                />
+                <img src={coin.item.small} alt={coin.item.id} />
                 <div>
                   <p className="coinName">{coin.item.name}</p>
                   <p>{coin.item.symbol}</p>
@@ -40,7 +36,7 @@ const Trending = () => {
                   src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579"
                   alt="bitcoin"
                 />
-                <p>{coin.item.price_btc.toFixed(7)}</p>
+                <p>{coin.item.price_btc.toFixed(6)}</p>
               </div>
             </div>
           </div>

@@ -1,0 +1,46 @@
+.coinRow {
+  height: 80px;
+  border-bottom: 1px solid var(--color-bg-secondary);
+  overflow: hidden;
+}
+
+.coinName {
+  display: flex;
+  align-items: center;
+}
+
+.coinImg {
+  width: 1.5rem;
+  height: auto;
+  margin-right: 0.5rem;
+  border-radius: 100%;
+}
+
+.coinHiddenOnSmall {
+  display: none;
+}
+
+
+.coinHiddenOnMid {
+  display: none;
+}
+
+.green {
+  color: rgb(1, 156, 1);
+}
+
+.red {
+  color: rgb(239, 5, 5);
+}
+
+@media (min-width: 768px) {
+  .coinHiddenOnSmall {
+    display: table-cell;
+  }
+}
+
+@media (min-width: 1024px) {
+  .coinHiddenOnMid {
+    display: table-cell;
+  }
+}

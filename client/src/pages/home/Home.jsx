@@ -1,6 +1,7 @@
 import React from "react";
 import NewsItem from "../../components/newsItem/NewsItem";
 import TrendingCoins from "../../components/trengingCoins/TrendingCoins";
+import TopCoinsStat from "../../components/topCoinsStat/TopCoinsStat";
 import "./home.css";
 
 const news = [
@@ -1656,22 +1657,28 @@ const news = [
 
 const Home = () => {
   return (
-    <div className="homeWrapper">
-      <div>
-        <h1>Latest Crypto News</h1>
+    <>
+      <div className="homeWrapper">
+        <div>
+          <h1>Latest Crypto News</h1>
+        </div>
+        <div className="news">
+          {news.slice(0, 4).map((item) => (
+            <NewsItem data={item} key={item.title} className="newsItem" />
+          ))}
+        </div>
+        <div>
+          <button className="allNewsBtn">See All Crypto News</button>
+        </div>
+        <div className="trendingCoins">
+          <TrendingCoins />
+        </div>
+        <div>
+          <h2 className="coinsStatsTitle">Most Popular Coins Stats</h2>
+        </div>
       </div>
-      <div className="news">
-        {news.slice(0, 4).map((item) => (
-          <NewsItem data={item} key={item.title} className="newsItem" />
-        ))}
-      </div>
-      <div>
-        <button className="allNewsBtn">See All Crypto News</button>
-      </div>
-      <div className="trendingCoins">
-        <TrendingCoins />
-      </div>
-    </div>
+      <TopCoinsStat />
+    </>
   );
 };
 
