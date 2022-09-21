@@ -8,6 +8,35 @@
   background-color: var(--color-bg-primary);
 }
 
+.topCoinsContainer {
+  max-width: 1140px;
+  width: 100%;
+  padding: 0 0.5rem;
+  margin: 1rem auto;
+}
+
+.serchWrapper{
+  max-width: 1140px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.searchTitle{
+  font-size: 1.5rem;
+}
+
+.searchInput{
+  width: 100%;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-bg-input);
+  border-radius: 1rem;
+  outline: none;
+  padding: 0.5rem 1rem;
+}
+
 .topCoinsTable {
   width: 100%;
   border-collapse: collapse;
@@ -60,6 +89,12 @@
   box-shadow: 0px 2px 2px 0px var(--color-shadow); 
 }
 
+@media (min-width: 768px) {
+  .searchWrapper {
+    flex-direction: row;
+    text-align: right;
+  }
+}
 
 @media (min-width: 768px) {
   .hiddenOnSmall {

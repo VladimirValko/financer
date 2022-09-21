@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import NewsItem from "../../components/newsItem/NewsItem";
-import TrendingCoins from "../../components/trengingCoins/TrendingCoins";
-import TopCoinsStat from "../../components/topCoinsStat/TopCoinsStat";
-import axios from "axios";
-import "./home.css";
+import { Link } from "react-scroll";
+import ReactPaginate from "react-paginate";
+import "./news.css";
 
 const news = [
   {
@@ -1656,44 +1655,53 @@ const news = [
   },
 ];
 
-const Home = () => {
-  const [coins, setCoins] = useState([]);
-
-  const URL = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=1000&page=1&sparkline=true`;
+const News = () => {
+  const [currentItems, setCurrentItems] = useState(null);
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
+  const itemsPerPage = 10;
 
   useEffect(() => {
-    axios
-      .get(URL)
-      .then((res) => {
-        setCoins(res.data);
-        console.log(res);
-      })
-      .catch((err) => console.error(err));
-  }, [URL]);
+    const endOffset = itemOffset + itemsPerPage;
+    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    setCurrentItems(news.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(news.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage, news]);
+
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % news.length;
+    setItemOffset(newOffset);
+  };
+
   return (
-    <>
-      <div className="homeWrapper">
-        <div>
-          <h1>Latest Crypto News</h1>
-        </div>
-        <div className="news">
-          {news.slice(0, 4).map((item) => (
-            <NewsItem data={item} key={item.title} className="newsItem" />
-          ))}
-        </div>
-        <div>
-          <button className="allNewsBtn">Show All Crypto News</button>
-        </div>
-        <div className="trendingCoins">
-          <TrendingCoins />
-        </div>
-        <div>
-          <h2 className="coinsStatsTitle">Most Popular Coins</h2>
-        </div>
+    <div className="newsPageWrapper">
+      <div className="newsPageTitle">
+        <p id="top">Crypto News</p>
       </div>
-      <TopCoinsStat coins={coins} />
-    </>
+      <div className="newsItemsWrapper">
+        {currentItems &&
+          currentItems.map((article) => <NewsItem data={article} />)}
+      </div>
+      <div>
+        <Link
+          activeClass="active"
+          to="top"
+          spy={true}
+          smooth={false}
+          duration={200}
+        >
+          <ReactPaginate
+            breakLabel="..."
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={3}
+            pageCount={pageCount}
+            renderOnZeroPageCount={null}
+            className="paginate"
+          />
+        </Link>
+      </div>
+    </div>
   );
 };
 
-export default Home;
+export default News;
