@@ -904,17 +904,6 @@ const TopCoinsStat = ({ coins }) => {
 
   return (
     <div className="topCoinsContainer">
-      <div className="serchWrapper">
-        <h1 className="searchTitle">Search Crypto</h1>
-        <form>
-          <input
-            onChange={(e) => setSearchText(e.target.value)}
-            type="text"
-            placeholder="Search a coin"
-            className="searchInput"
-          />
-        </form>
-      </div>
       <div className="topCoinsWrapper">
         <table className="topCoinsTable">
           <thead>
@@ -932,7 +921,7 @@ const TopCoinsStat = ({ coins }) => {
           </thead>
           <tbody>
             {coins
-              ?.slice(0, 5)
+              ?.slice(0, 10)
               .filter((value) => {
                 if (searchText === "") {
                   return value;

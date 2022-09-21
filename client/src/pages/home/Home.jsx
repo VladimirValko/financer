@@ -1670,6 +1670,7 @@ const Home = () => {
       })
       .catch((err) => console.error(err));
   }, [URL]);
+
   return (
     <>
       <div className="homeWrapper">
@@ -1677,7 +1678,7 @@ const Home = () => {
           <h1>Latest Crypto News</h1>
         </div>
         <div className="news">
-          {news.slice(0, 4).map((item) => (
+          {news.slice(0, 6).map((item) => (
             <NewsItem data={item} key={item.title} className="newsItem" />
           ))}
         </div>

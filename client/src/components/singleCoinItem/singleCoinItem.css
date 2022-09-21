@@ -1,0 +1,37 @@
+.coinWrapper {
+  display: flex; 
+  width: 345px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  margin: 1rem;
+  color: var(--color-text-primary);
+  border-radius: 1rem; 
+  -webkit-box-shadow: 1px 1px 1px 1px var(--color-shadow);
+  -moz-box-shadow: 1px 1px 1px 1px var(--color-shadow);
+  box-shadow: 1px 1px 1px 1px var(--color-shadow);
+}
+
+.coinNameImg img {
+  width: 2rem;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.coinWrapper:hover {
+  scale: 1.05;
+  transition-duration: 400ms;
+  cursor: pointer;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color:red;
+}
