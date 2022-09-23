@@ -1,22 +1,20 @@
 import React from "react";
 import { AiOutlineStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { Sparklines, SparklinesLine } from "react-sparklines";
 import "./singleCoinItem.css";
 
 const SingleCoinItem = ({ coin }) => {
   return (
     <div className="coinWrapper">
       <div className="coinNameImg">
-        <Link to={`/coin/${coin.id}`}>
-          <div>
-            <img src={coin.image} alt={coin.id} />
-          </div>
-        </Link>
+        <div>
+          <img src={coin.image} alt={coin.id} />
+        </div>
       </div>
       <div>
         <p>{coin.name}</p>
       </div>
+
       <div>
         <p>$ {coin.current_price.toLocaleString()}</p>
       </div>

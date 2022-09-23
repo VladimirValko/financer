@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NewsItem from "../../components/newsItem/NewsItem";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import ReactPaginate from "react-paginate";
 import "./news.css";
 
@@ -1659,7 +1659,7 @@ const News = () => {
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 10;
+  const itemsPerPage = 9;
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
@@ -1680,10 +1680,10 @@ const News = () => {
       </div>
       <div className="newsItemsWrapper">
         {currentItems &&
-          currentItems.map((article) => <NewsItem data={article} />)}
+          currentItems.map((article, i) => <NewsItem data={article} key={i} />)}
       </div>
-      <div>
-        <Link
+      <div className="paginationFull">
+        <ScrollLink
           activeClass="active"
           to="top"
           spy={true}
@@ -1696,9 +1696,27 @@ const News = () => {
             pageRangeDisplayed={3}
             pageCount={pageCount}
             renderOnZeroPageCount={null}
-            className="paginate"
+            className="paginateFull"
           />
-        </Link>
+        </ScrollLink>
+      </div>
+      <div className="paginationMobile">
+        <ScrollLink
+          activeClass="active"
+          to="top"
+          spy={true}
+          smooth={false}
+          duration={200}
+        >
+          <ReactPaginate
+            breakLabel="..."
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={2}
+            pageCount={pageCount}
+            renderOnZeroPageCount={null}
+            className="paginateMobile"
+          />
+        </ScrollLink>
       </div>
     </div>
   );

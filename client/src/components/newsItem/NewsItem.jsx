@@ -6,26 +6,28 @@ const NewsItem = ({ data }) => {
   const date = formatedDate.toLocaleDateString();
 
   return (
-    <div>
-      <div className="newsItem">
-        <div className="newsItemImg">
+    <div className="newsItem">
+      <div className="newsItemTitle">
+        <a href={data.url} target="blank">
+          <h3>{data.title}</h3>
+        </a>
+      </div>
+      <div className="newsItemImg">
+        <a href={data.url} target="blank">
           <img src={data.urlToImage} alt={data.title} className="image" />
+        </a>
+      </div>
+      <div className="textPart">
+        <div className="dateAuthor">
+          <p className="author">
+            {" "}
+            written by <span>{data.author}</span>
+          </p>
+          <p>{date}</p>
         </div>
-        <div className="textPart">
-          <div className="newsItemTitle">
-            <h3>{data.title}</h3>
-          </div>
-          <div className="dateAuthor">
-            <p className="author">
-              {" "}
-              written by <span>{data.author}</span>
-            </p>
-            <p>{date}</p>
-          </div>
 
-          <div className="newsItemDescription">
-            <p>{data.description}</p>
-          </div>
+        <div className="newsItemDescription">
+          <p>{data.description}</p>
         </div>
       </div>
     </div>

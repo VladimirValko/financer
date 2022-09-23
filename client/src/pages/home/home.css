@@ -12,9 +12,8 @@
 }
 
 .news {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: center;
   gap: 1.5rem;
   margin-left: auto;
@@ -52,4 +51,17 @@
 .coinsStatsTitle {
   font-size: 2rem;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  .news {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .news {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
 }

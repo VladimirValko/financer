@@ -4,6 +4,7 @@ import TrendingCoins from "../../components/trengingCoins/TrendingCoins";
 import TopCoinsStat from "../../components/topCoinsStat/TopCoinsStat";
 import axios from "axios";
 import "./home.css";
+import { Link } from "react-router-dom";
 
 const news = [
   {
@@ -1683,7 +1684,9 @@ const Home = () => {
           ))}
         </div>
         <div>
-          <button className="allNewsBtn">Show All Crypto News</button>
+          <Link to="/allNews">
+            <button className="allNewsBtn">Show All Crypto News</button>
+          </Link>
         </div>
         <div className="trendingCoins">
           <TrendingCoins />
@@ -1692,7 +1695,9 @@ const Home = () => {
           <h2 className="coinsStatsTitle">Most Popular Coins</h2>
         </div>
       </div>
-      <TopCoinsStat coins={coins} />
+      <Link to="/allCoins">
+        <TopCoinsStat coins={coins} />
+      </Link>
     </>
   );
 };

@@ -1,21 +1,27 @@
 .allCoinsWrapper{
   display: flex;
-  margin-top: 2rem;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2rem auto;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+
 }
 
 .coins {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1140px;
   justify-content: center;
+  max-width: 1140px;
 }
 
 .allCryptoTitle{
   font-weight: bold;
   font-size: 2rem;
+}
+
+.serchWrapper form{
+margin: 1rem auto;
 }
 
 .serchWrapper input:hover{
@@ -33,3 +39,20 @@
   -moz-box-shadow: 0px 2px 2px 0px var(--color-shadow);
   box-shadow: 0px 2px 2px 0px var(--color-shadow);
 }
+
+@media (max-width: 900px) {
+  .serchWrapper {
+    flex-direction: column;
+  }
+
+  .serchWrapper input {
+    width: 300px;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .serchWrapper input {
+    width: 250px;
+    margin-top: 1rem;
+  }}

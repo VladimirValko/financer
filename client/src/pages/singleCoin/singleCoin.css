@@ -1,0 +1,110 @@
+.coinPageWrapper {
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: 1rem;
+  background-color: var(--color-bg-primary);
+  padding: 1rem 0.5rem;
+  max-width: 1140px;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.coinPriceImgWrapper {
+  display: flex;
+  padding: 2rem 0.5rem;
+}
+
+.coinPriceImgWrapper img {
+  width: 5rem;
+  margin-right: 2rem;
+}
+
+.coinPrice {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.gridContainer {
+  display: grid;
+  gap: 2rem;
+  padding: 0 0.5rem;
+}
+
+.currentPriceBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+.currentPriceBlock p:first-child {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.marketCapBlock {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.textGray {
+  color: gray;
+}
+
+.pBold {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.vol24 {
+  text-align: end;
+}
+
+.hiLowBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+.textTitle {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.marketStatsBlock {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.textStart {
+  text-align: start;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.textEnd {
+  text-align: end;
+}
+
+.priceBlock {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.description {
+  padding: 1rem 0;
+}
+
+.descriptionTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
