@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
 import "./index.css";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
-import Account from "../src/pages/Account";
+import Account from "./pages/Account";
 import AllCoins from "./pages/allCoins/AllCoins";
-import SingleCoin from "../src/pages/singleCoin/SingleCoin";
-import Home from "../src/pages/home/Home";
-import Login from "../src/pages/LogIn";
+import SingleCoin from "./pages/singleCoin/SingleCoin";
+import Home from "./pages/home/Home";
+import Login from "./pages/LogIn";
 import News from "./pages/news/News";
-import Register from "../src/pages/Register";
+import Register from "./pages/Register";
+import React from "react";
 
 function App() {
   return (

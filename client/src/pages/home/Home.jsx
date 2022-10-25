@@ -1695,9 +1695,7 @@ const Home = () => {
           <h2 className="coinsStatsTitle">Most Popular Coins</h2>
         </div>
       </div>
-      <Link to="/allCoins">
-        <TopCoinsStat coins={coins} />
-      </Link>
+      <TopCoinsStat coins={coins} />
     </>
   );
 };

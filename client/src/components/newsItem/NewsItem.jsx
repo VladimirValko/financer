@@ -21,7 +21,7 @@ const NewsItem = ({ data }) => {
         <div className="dateAuthor">
           <p className="author">
             {" "}
-            written by <span>{data.author}</span>
+            written by <span>{data.author?.slice(0, 50)}</span>
           </p>
           <p>{date}</p>
         </div>
