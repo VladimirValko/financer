@@ -15,7 +15,7 @@ const News = () => {
   useEffect(() => {
     const getNews = async () => {
       const apiNews = await axios.get(
-        `https://newsapi.org/v2/everything?q=Crypto&from=2022-09-23&sortBy=popularity&apiKey=67d2c0e4c9f046bbb4ad55012fc182bc`
+        `https://newsapi.org/v2/everything?q=Crypto&from=2022-10-25&sortBy=popularity&apiKey=67d2c0e4c9f046bbb4ad55012fc182bc`
       );
       setNews(apiNews.data.articles);
     };

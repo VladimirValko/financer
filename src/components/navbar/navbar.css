@@ -29,7 +29,7 @@
 }
 
 .loginBlock {
-  display: none;
+  display: flex;
 }
 
 .signin {

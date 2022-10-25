@@ -28,7 +28,6 @@ const AllCoins = () => {
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(coins.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(coins.length / itemsPerPage));
   }, [itemOffset, itemsPerPage, coins]);

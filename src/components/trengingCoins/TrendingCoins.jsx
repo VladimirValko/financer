@@ -5,7 +5,6 @@ import "./trendingCoins.css";
 
 const Trending = () => {
   const [trending, setTrending] = useState([]);
-  console.log(trending);
 
   const URL = "https://api.coingecko.com/api/v3/search/trending";
 
@@ -14,7 +13,6 @@ const Trending = () => {
       .get(URL)
       .then((response) => {
         setTrending(response.data.coins);
-        console.log(response.data.coins);
       })
       .catch((err) => console.log(err));
   }, []);

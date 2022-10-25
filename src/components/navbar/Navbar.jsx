@@ -20,10 +20,10 @@ const Navbar = () => {
         <ThemeToggle />
       </div>
       <div className="loginBlock">
-        <Link to="/signin" className="signin">
+        <Link to="/" className="signin">
           Sign In
         </Link>
-        <Link to="/signup" className="signup">
+        <Link to="/" className="signup">
           Sign Up
         </Link>
       </div>
@@ -49,10 +49,10 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="mobileLoginWrapper">
-          <Link to="/signin">
+          <Link to="/">
             <button className="signInBtn">Sign In</button>
           </Link>
-          <Link to="/signup">
+          <Link to="/">
             <button className="signUpBtn">Sign Up</button>
           </Link>
         </div>

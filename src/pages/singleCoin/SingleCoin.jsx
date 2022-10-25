@@ -10,8 +10,6 @@ const CoinPage = () => {
   const [coin, setCoin] = useState({});
   const params = useParams();
 
-  console.log(params);
-
   const URL = `https://api.coingecko.com/api/v3/coins/${params.id}?localization=false&sparkline=true`;
 
   useEffect(() => {
@@ -20,8 +18,6 @@ const CoinPage = () => {
       .then((response) => setCoin(response.data))
       .catch((err) => console.log(err));
   }, [URL]);
-
-  console.log(coin);
 
   return (
     <div className="coinPageWrapper">
