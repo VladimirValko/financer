@@ -4,13 +4,14 @@ import { Link as ScrollLink } from "react-scroll";
 import ReactPaginate from "react-paginate";
 import "./news.css";
 import axios from "axios";
+import { hardcodedNewsData } from "../../components/hardcodedNewsData/HardcodedNewsData";
 
 const News = () => {
   const [news, setNews] = useState([]);
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 9;
+  const itemsPerPage = 6;
 
   useEffect(() => {
     const getNews = async () => {
@@ -24,12 +25,13 @@ const News = () => {
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
-    setCurrentItems(news?.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(news?.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage, news]);
+    setCurrentItems(hardcodedNewsData?.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(hardcodedNewsData?.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage, hardcodedNewsData]);
 
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % news.length;
+    const newOffset =
+      (event.selected * itemsPerPage) % hardcodedNewsData.length;
     setItemOffset(newOffset);
   };
 
